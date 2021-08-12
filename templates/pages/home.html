@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}NotePad | Homepage{% endblock title %}
+
+<!-- Masthead-->
+{% block content %}
+<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+    <div class="col-lg-8 align-self-end">
+        {% if user.is_authenticated %}
+            {% if user.first_name %}
+                <h1 class="text-white font-weight-bold">Bienvenu {{ user.first_name | capfirst }} dans votre boîte à outils en ligne</h1>
+            {% else %}
+                <h1 class="text-white font-weight-bold">Bienvenu dans votre boîte à outils en ligne </h1><p class = "text-white">(pensez à complèter votre profil)</p>
+            {% endif %}
+        {% else %}
+            <h1 class="text-white font-weight-bold">Bienvenu dans la boîte à outils en ligne</h1>
+        {% endif %}
+        <p>Aujourd'hui nous sommes le : {{myDate|date}}</p>
+        <hr class="divider" / />
+    </div>
+    <div class="col-lg-8 align-self-baseline">
+        <p class="text-white-75 mb-5">Ici vous trouverez vos outils de tous les jours dans un même conteneur : <br> Bloc-notes, Banques de mots de passe, Agenda, ...</p>
+        <a class="btn btn-primary btn-xl" href="#about">Quelques apercus d'applications</a>
+    </div>
+</div> 
+{% endblock content %}
+
+

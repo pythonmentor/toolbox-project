@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}NotePad | Register{% endblock title %}
+{% block content %}
+
+<header class="masthead">
+    <div class="container px-4 px-lg-5 h-100 ">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center ">
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form.as_p}}
+                <input type="submit" class="btn btn-outline-info mb-2" value="s'inscrire"</input>
+            </form>
+        </div>
+    </div>
+</header>
+
+{% endblock content %}
