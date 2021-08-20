@@ -2,6 +2,10 @@ body{
     color: #1a202c;
     text-align: left;
     background-color: #f0e7e2;    
+  
+}
+.myprofil {
+    margin: 5em;
 }
 .main-body {
     padding: 15px;
@@ -11,6 +15,7 @@ body{
 }
 
 .card {
+    
     position: relative;
     display: flex;
     flex-direction: column;

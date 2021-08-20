@@ -8,12 +8,12 @@
     <div class="col-lg-8 align-self-end">
         {% if user.is_authenticated %}
             {% if user.first_name %}
-                <h1 class="text-white font-weight-bold">Bienvenu {{ user.first_name | capfirst }} dans votre boîte à outils en ligne</h1>
+                <h1 class="text-white font-weight-bold">Bienvenue {{ user.first_name | capfirst }} dans votre boîte à outils en ligne</h1>
             {% else %}
-                <h1 class="text-white font-weight-bold">Bienvenu dans votre boîte à outils en ligne </h1><p class = "text-white">(pensez à complèter votre profil)</p>
+                <h1 class="text-white font-weight-bold">Bienvenue dans votre boîte à outils en ligne </h1><p class = "text-white">(pensez à complèter votre profil)</p>
             {% endif %}
         {% else %}
-            <h1 class="text-white font-weight-bold">Bienvenu dans la boîte à outils en ligne</h1>
+            <h1 class="text-white font-weight-bold">Bienvenue dans la boîte à outils en ligne</h1>
         {% endif %}
         <p>Aujourd'hui nous sommes le : {{myDate|date}}</p>
         <hr class="divider" / />

@@ -2,26 +2,29 @@
 {% block title %}NotePad | Login{% endblock title %}
 {% block content %}
 
-<style>
-    .masthead {
-      margin: auto;
+ <style>
+    table {
+      margin: 1em;
       width: 100%;
       border: 3px solid bleue;
       padding: 10px;
     }
 
+    input{
+        margin: 1em;
+    }
+
 </style>
 
-<header class="masthead">
-    <div class="container px-4 px-lg-5 h-100 ">
-        <div class="row gx-4 gx-lg-5 h-100 align-items-center text-center">
-            <form class='form gx-4 gx-lg-5  align-items-center text-center' method='post'>    
+
+<div class= "form-group">
+        <table>
+            <form  method='post'>    
                 {% csrf_token %}
-                    {{ form.as_p}}
-                <input type="submit" class="btn btn-outline-info mb-2" value='Login'</input>
-            </form>
-        </div>
-    </div>
-</header>
+                    {{ form.as_table}}
+            </table>
+            <input type="submit" class="btn btn-outline-info mb-2" value='Login'</input>
+</div>
+{% comment %} </header> {% endcomment %}
 
 {% endblock content %}

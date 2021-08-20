@@ -13,16 +13,21 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUser
 
     list_display = (
+    'id',
     'email',
     'username',
     'first_name', 
     'last_name',
     'date_of_birth',
-    'address',
+    'street_number',
+    'street',
+    'zipcode',
+    'town',
     'mobile',
+    'password',
     )      
 
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('date_of_birth', 'username', 'first_name', 'last_name', 'address', 'mobile')}),
+        ('Personal info', {'fields': ('date_of_birth', 'username', 'first_name', 'last_name', 'street_number', 'street', 'zipcode', 'town', 'mobile')}),
     )
