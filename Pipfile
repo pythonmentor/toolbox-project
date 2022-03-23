@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+phonenumbers = "*"
+django-phonenumber-field = "*"
+django-ckeditor = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "*"

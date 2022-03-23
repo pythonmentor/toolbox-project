@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}NotePad | Note{% endblock title %}
+{% block content %}
+
+<hr>
+<h1><center>{{note.title | upper}}   <h3>Créée le : {{note.creation_date | date:'d F Y'}}</h3></center></h1>
+<hr>
+<div class="container">
+    <div class="card mb-3 shadow">
+        <div class="card-body">
+            <h2><center>{{note.title}}</center></h2>
+        <hr>
+            {{note.content | safe}}
+        
+        <hr>
+            <a href="{% url 'note' %}" class="card-link"> Retour</a> 
+            <a href="{% url 'modif_note' note.pk %}" class="card-link"> Modifier</a>
+            <a href="{% url 'delete_note' note.pk %}" class="card-link"> Supprimer</a> 
+        </div>  
+    </div>
+</div>
+
+
+
+
+{% endblock content%}

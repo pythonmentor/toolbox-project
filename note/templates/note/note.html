@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}NotePad | Note{% endblock title %}
+{% block content %}
+
+<hr>
+<h1><center>MES NOTES</center></h1>
+<hr>
+<div class="container">
+    <div class="row row-cols-md-3 row-cols-md-2">
+         {% for note in object_list %}
+            <div class= "col">
+                <div class="card mb-3 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">{{note.title| safe }}</h3>
+                        <p class="card-text">{{ note.content| safe | truncatechars:'200'}}</p>
+                        <a href="{% url 'detail_note' note.id %}" class="card-link">Ouvrir</a>
+                        <a href="{% url 'delete_note' note.pk %}" class="card-link">Supprimer</a>
+
+                    </div>
+                </div>
+            
+            </div>
+        {% endfor%} 
+        <style>
+        
+            .pagination a {
+                border: 1px solid #ddd; /* Gray */
+                color : white;
+                padding-left : 8px;
+                padding-right : 8px;
+                background: #495057;
+                font-size: 1.15rem;
+
+          }
+        </style>
+        Page {{page_obj.number}} de {{page_obj.paginator.num_pages}}
+        </div>
+        <br>
+        <ul style="ml: 10 px" class="pagination">
+            {% if page_obj.has_previous%}
+            <li><a href="?page=1" style="text-decoration:none"> Première  Page</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" style="text-decoration:none">    Précédent  </a></li>
+            {% endif %}
+            {% if page_obj.has_next%}
+            <li><a href="?page={{ page_obj.next_page_number }}" style="text-decoration:none"> Suivante  </a></li>
+
+            <li><a href="?page={{ page_obj.paginator.num_pages }}" style="text-decoration:none">Dernière Page</a></li>
+            {% endif %}
+        </ul>
+</div>
+
+
+{% endblock content%}
