@@ -10,6 +10,9 @@
         <div class="card-body">
             <h2><center>{{note.title}}</center></h2>
         <hr>
+        {% if note.image_file %}
+            <img src = "{{note.image_file.url}}" width="500" height="500" class="center">
+        {% endif%}
             {{note.content | safe}}
         
         <hr>

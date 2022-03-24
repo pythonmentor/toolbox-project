@@ -6,8 +6,9 @@
 <div class="container">
   <div class="card mb-3 shadow">
       <div class="card-body">
-          <form method="POST" >
+          <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
+              {{ form.media }}
               {{ form.as_p }}
               <button class="btn btn-primary btn-sm" > Modifier</button>
               <button class="btn btn-primary btn-sm" href= "{% url 'note' %}"> Annuler</button>

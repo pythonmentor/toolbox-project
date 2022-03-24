@@ -11,7 +11,7 @@
             <div class= "col">
                 <div class="card mb-3 shadow">
                     <div class="card-body">
-                        <h3 class="card-title">{{note.title| safe }}</h3>
+                        <h3 class="card-title">{{note.title| safe }} -  <font size="3"> Le : {{note.creation_date | date:'d F Y'}}</font> </h3>
                         <p class="card-text">{{ note.content| safe | truncatechars:'200'}}</p>
                         <a href="{% url 'detail_note' note.id %}" class="card-link">Ouvrir</a>
                         <a href="{% url 'delete_note' note.pk %}" class="card-link">Supprimer</a>

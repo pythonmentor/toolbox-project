@@ -4,7 +4,7 @@ from .models import Note
 class NoteForm(forms.ModelForm):
     class Meta:
         model = Note
-        fields = ('title', 'content')
+        fields = ('title', 'content', 'image_file')
         
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
